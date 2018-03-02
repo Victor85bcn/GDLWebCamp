@@ -188,7 +188,7 @@ h3 {
 
 ul {
   list-style: none;
-  margin 0;
+  margin: 0;
   padding: 0;
 }
 
@@ -475,20 +475,24 @@ div.detalle-evento p {
   font-size: 20px;
 }
 
-/* Invitados */
+/** Invitados **/
 
 ul.lista-invitados li {
   padding: 10px;
   float: left;
 }
 
-@media only screen and (min-width: 480px) {
+ul.lista-invitados img {
+  width: 100%;
+}
+
+@media only screen and (min-width:480px) {
   ul.lista-invitados li {
     width: 50%;
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width:768px) {
   ul.lista-invitados li {
     width: 33.3%;
   }
@@ -512,15 +516,12 @@ div.invitado p {
   background-color: rgba(0, 0, 0, 0.55);
   width: 100%;
   text-align: left;
+  font-family: 'Oswald', sans-serif;
+  color: #fe4918;
+  text-transform: uppercase;
 }
 
-@media only screen and (min-width: 1430px) { /** INVENCION MIA **/
 
-  ul.lista-invitados li {
-    max-width: 450px;
-    text-align: center;
-  }
-}
 
 
 
