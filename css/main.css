@@ -542,6 +542,7 @@ div.invitado p {
   text-align: left;
   font-family: 'Oswald', sans-serif;
   font-weight: bold;
+  text-align: center;
   color: #fe4918;
   text-transform: uppercase;
   -webkit-transition: all .5s ease-in-out;
@@ -720,6 +721,7 @@ blockquote p::before {
 
 footer.info-testimonial {
   padding: 0;
+  background-color: transparent;
 }
 
 footer.info-testimonial img {
