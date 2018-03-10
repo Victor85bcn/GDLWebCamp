@@ -1,6 +1,8 @@
 (function() {
       "use strict";
 
+      var regalo = document.getElementById('regalo');
+
       document.addEventListener('DOMContentLoaded', function(){
 
           // Campos datos usuario
@@ -18,7 +20,61 @@
           var calcular = document.getElementById('calcular');
           var errorDiv = document.getElementById('error');
           var botonRegistro = document.getElementById('btnRegistro');
-          var resultado = document.getElementById('lista-productos  ');
+          var lista_productos = document.getElementById('lista-productos');
+
+          // Extras
+
+          var etiquetas = document.getElementById('etiquetas');
+          var camisas = document.getElementById('camisa_evento');
+
+
+          calcular.addEventListener('click', calcularMontos);
+
+
+          function calcularMontos(event){
+            event.preventDefault();
+            if(regalo.value === '') {
+              alert("Debes elegir un regalo");
+              regalo.focus();
+            } else {
+              var boletosDia = parseInt(pase_dia.value, 10)|| 0,
+                  boletos2Dias = parseInt(pase_dosdias.value, 10)|| 0,
+                  boletoCompleto = parseInt(pase_completo.value, 10)|| 0,
+                  cantCamisas = parseInt(camisas.value, 10)|| 0,
+                  cantEtiquetas = parseInt(etiquetas.value, 10)|| 0;
+
+              var totalPagar = (boletosDia * 30) + (boletos2Dias * 45) + (boletoCompleto * 50) + ((cantCamisas * 10) * 0.93) + (cantEtiquetas * 2);
+
+              var listadoProductos = [];
+
+              if(boletosDia >= 1) {
+                listadoProductos.push(boletosDia + ' Pases por día');
+              }
+              if(boletos2Dias >= 1) {
+              listadoProductos.push(boletos2Dias + ' Pases por 2 dias');
+              }
+              if(boletoCompleto >= 1) {
+              listadoProductos.push(boletoCompleto + ' Pases completos');
+              }
+              if(cantCamisas >= 1) {
+              listadoProductos.push(cantCamisas + ' Camisas');
+              }
+              if(cantEtiquetas >= 1) {
+              listadoProductos.push(cantEtiquetas + ' etiquetas');
+              }
+
+              lista_productos.innerHTML = '';
+              for(var i = 0; i< listadoProductos.length; i++) {
+                lista_productos.innerHTML += listadoProductos[i] + '<br/>';
+              }
+
+
+
+              console.log(listadoProductos);
+
+
+            }
+          }
 
 
       }); // DOM CONTENT LOADED
