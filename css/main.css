@@ -900,7 +900,7 @@ div.paquetes .tabla-precio input {
 
 .contenido-dia {
   padding: 20px;
-  /*display: none;*/
+  display: none;
 }
 
 @media only screen and (min-width:768px) {
@@ -979,6 +979,12 @@ div.resumen input {
   color: #fe4918;
 }
 
+#error {
+  clear: both;
+  padding: 15px;
+  text-align: center;
+  display: none;
+}
 
 
 /* ==========================================================================
